@@ -1,3 +1,4 @@
 ipykernel
 spacy
 jupyter
+spacy-llm
