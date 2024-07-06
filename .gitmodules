@@ -1,0 +1,3 @@
+[submodule "ref_explosion"]
+	path = ref_explosion
+	url = https://github.com/explosion/assets.git
