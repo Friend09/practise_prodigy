@@ -1,0 +1,5 @@
+{
+    "theme": "basic",
+    "custom_theme": {},
+    "buttons": ["accept", "reject", "ignore", "undo"]
+}
