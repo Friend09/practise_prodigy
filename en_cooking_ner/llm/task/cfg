@@ -1,0 +1,11 @@
+{
+  "_label_dict":{
+    "dish":"DISH",
+    "equipment":"EQUIPMENT",
+    "ingredient":"INGREDIENT"
+  },
+  "_template":"You are an expert Named Entity Recognition (NER) system. Your task is to accept Text as input and extract named entities for the set of predefined entity labels.\nFrom the Text input provided, extract named entities for each label in the following format:\n{# whitespace #}\n{# whitespace #}\n{%- for label in labels -%}\n{{ label }}: <comma delimited list of strings>\n{# whitespace #}\n{%- endfor -%}\n{# whitespace #}\n{# whitespace #}\n{%- if label_definitions -%}\nBelow are definitions of each label to help aid you in what kinds of named entities to extract for each label.\nAssume these definitions are written by an expert and follow them closely.\n{# whitespace #}\n{# whitespace #}\n{%- for label, definition in label_definitions.items() -%}\n{{ label }}: {{ definition }}\n{# whitespace #}\n{%- endfor -%}\n{# whitespace #}\n{# whitespace #}\n{%- endif -%}\n{# whitespace #}\n{# whitespace #}\n{%- if prompt_examples -%}\nBelow are some examples (only use these as a guide):\n{# whitespace #}\n{# whitespace #}\n{%- for example in prompt_examples -%}\nText:\n'''\n{{ example.text }}\n'''\n{# whitespace #}\n{%- for label, substrings in example.entities.items() -%}\n{# whitespace #}\n{{ label }}: {{ ', '.join(substrings) }}\n{%- endfor -%}\n{# whitespace #}\n{# whitespace #}\n{# whitespace #}\n{%- endfor -%}\n{# whitespace #}\n{# whitespace #}\n{%- endif -%}\nHere is the text that needs labeling:\n{# whitespace #}\nText:\n'''\n{{ text }}\n'''\n",
+  "_label_definitions":null,
+  "_alignment_mode":"contract",
+  "_case_sensitive_matching":false
+}

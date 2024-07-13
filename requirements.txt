@@ -4,3 +4,4 @@ jupyter
 spacy-llm
 jupyterlab-prodigy
 openai
+python-dotenv
