@@ -3,3 +3,4 @@ spacy
 jupyter
 spacy-llm
 jupyterlab-prodigy
+openai
