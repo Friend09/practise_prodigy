@@ -1,5 +1,6 @@
 ipykernel
 jupyter
+openai
 python-dotenv
 spacy
 spacy-llm
