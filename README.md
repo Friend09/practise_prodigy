@@ -105,15 +105,15 @@ python -m spacy info
 | -------------------- | ------------------------------ |
 | License type         | Personal license               |
 | Upgrades valid until | Oct 18, 2024                   |
-| Latest eligible      | **Prodigy v1.15.8** (Oct 2024) |
+| Latest eligible      | **Prodigy v1.15.7** (Oct 2024) |
 | Current latest       | v1.18.4 (Nov 2025)             |
 
-Your license key grants access to all Prodigy versions released up to your upgrade expiry date. The latest version you can install is **v1.15.8**.
+Your license key grants access to all Prodigy versions released up to your upgrade expiry date. The latest version you can install is **v1.15.7**.
 
 To install a specific version:
 
 ```bash
-python -m pip install prodigy==1.15.8 -f https://YOUR_LICENSE_KEY@download.prodi.gy
+python -m pip install prodigy==1.15.7 -f https://YOUR_LICENSE_KEY@download.prodi.gy
 ```
 
 ### Renewing Upgrades

@@ -1,11 +1,14 @@
+compile:
+	uv pip compile requirements.in -o requirements.txt
+
 install:
-	pip install --upgrade pip && \
-		pip install -r requirements.txt
+	uv pip install --upgrade pip && \
+		uv pip install -r requirements.txt
 
 install-prodigy:
 	@if [ -f .env ]; then \
 		export $$(grep PRODIGY_LICENSE_KEY .env | xargs) && \
-		pip install prodigy==1.15.8 -f https://$$PRODIGY_LICENSE_KEY@download.prodi.gy; \
+		uv pip install prodigy==1.15.7 -f https://$$PRODIGY_LICENSE_KEY@download.prodi.gy; \
 	else \
 		echo "ERROR: .env file not found. Copy .env.example to .env and add your license key."; \
 		exit 1; \
