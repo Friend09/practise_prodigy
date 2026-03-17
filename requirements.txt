@@ -1,7 +1,5 @@
 ipykernel
-spacy
 jupyter
-spacy-llm
-jupyterlab-prodigy
-openai
 python-dotenv
+spacy>=3.7,<3.9
+spacy-llm>=0.7,<1.0

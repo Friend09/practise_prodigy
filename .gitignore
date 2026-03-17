@@ -143,3 +143,10 @@ dmypy.json
 
 # Cython debug symbols
 cython_debug/
+
+# Reference repos (cloned locally for learning, not tracked)
+ref_explosion/
+ref_spacy_llm/
+
+# Trained models (can be large; rebuild from configs)
+models/
