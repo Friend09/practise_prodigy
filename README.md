@@ -148,10 +148,10 @@ See the full [Prodigy Changelog](https://prodi.gy/docs/changelog) for all versio
 │
 ├── dev/                    # Development configs & few-shot examples
 │   ├── _config/            #   spaCy/Prodigy pipeline configs
-│   │   ├── config.cfg      #     TextCat (GPT-3.5)
-│   │   ├── config_classif.cfg  # TextCat classification
-│   │   ├── config_ner.cfg  #     NER (GPT-4)
-│   │   └── prodigy_config_ner.cfg  # Cooking NER with label defs & few-shot (GPT-3.5)
+│   │   ├── config.cfg      #     TextCat (gpt-4.1-mini via spacy.GPT-4.v3)
+│   │   ├── config_classif.cfg  # TextCat classification (gpt-4.1-mini)
+│   │   ├── config_ner.cfg  #     NER (gpt-4.1-mini via spacy.GPT-4.v3)
+│   │   └── prodigy_config_ner.cfg  # Cooking NER with label defs & few-shot (gpt-4.1-mini)
 │   └── _fewshot/           #   Few-shot learning examples
 │       └── ner_examples.yml#     NER few-shot examples for spacy-llm prompts
 │
@@ -195,9 +195,11 @@ The `*.llm.*` recipes use `spacy-llm` configuration files in `dev/_config/`. The
 - **Task**: `spacy.NER.v2` with labels `DISH`, `INGREDIENT`, `EQUIPMENT`
 - **Label definitions**: Descriptions to guide the LLM (e.g., "Extract the name of a cooking ingredient")
 - **Few-shot examples**: Loaded from `dev/_fewshot/ner_examples.yml` via `spacy.FewShotReader.v1`
-- **Model**: `spacy.GPT-3-5.v1` (requires `OPENAI_API_KEY`)
+- **Model**: `spacy.GPT-4.v3` with `name = "gpt-4.1-mini"` (requires `OPENAI_API_KEY`)
 
-You can swap the model backend (e.g., to GPT-4 or a local model) by editing the `[components.llm.model]` section. Enable caching by uncommenting `[components.llm.cache]` to avoid duplicate LLM calls.
+You can swap the model backend by editing the `[components.llm.model]` section. The `spacy.GPT-4.v3` registry entry accepts any OpenAI model name via the `name` parameter (e.g., `gpt-4.1`, `gpt-4.1-nano`, `o3-mini`). Enable caching by uncommenting `[components.llm.cache]` to avoid duplicate LLM calls.
+
+> **Note (March 2026)**: All configs were migrated from `spacy.GPT-3-5.v1` (which used the now-retired `gpt-3.5-turbo`) to `spacy.GPT-4.v3` with `name = "gpt-4.1-mini"`. The `spacy.GPT-4.v3` registry is the most flexible — it accepts any model name string, unlike older versioned entries that restrict to a fixed allowlist.
 
 ## Quick Start
 
